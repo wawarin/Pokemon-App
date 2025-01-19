@@ -29,14 +29,14 @@ const HomePage = () => {
 
   // Hadle Function
 
-  const handleCardClick = (name) => {
+  const handleCardClick = (name: any) => {
     setPokemonName(name);
     const newPath = `/pokemon/${name}`;
     window.history.replaceState(null, "", newPath);
     // router.push(`/pokemon/${name}`);
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: any) => {
     setPokemonName(e.target.value);
     // const newPath = `/pokemon/${e.target.value}`;
     // window.history.replaceState(null, "", newPath);
@@ -110,7 +110,7 @@ const HomePage = () => {
           )}
           {!pokemonName && !isLoading && allPokemons && (
             <div className="pokemon-cards">
-              {visiblePokemons.map((pokemon) => (
+              {visiblePokemons.map((pokemon: any) => (
                 <div
                   key={pokemon.id}
                   className="pokemon-card"
@@ -131,7 +131,7 @@ const HomePage = () => {
                   </p>
                   {pokemon.types && (
                     <div className="pokemon-types">
-                      {pokemon.types.map((type, index) => (
+                      {pokemon.types.map((type: any, index: any) => (
                         <span
                           key={index}
                           className={`type-box ${type.toLowerCase()}`}
